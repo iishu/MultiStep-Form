@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Typography, List, ListItem, ListItemText } from '@mui/material';
+import { Button, Container, Typography, List, ListItem, ListItemText ,Box} from '@mui/material';
 
 const Step3 = ({ prevStep, handleSubmit, values }) => {
   const backStep = (e) => {
@@ -9,6 +9,7 @@ const Step3 = ({ prevStep, handleSubmit, values }) => {
 
   return (
     <Container maxWidth="sm">
+        <Box boxShadow={3} p={3} bgcolor="background.paper"> 
       <Typography variant="h4" gutterBottom>
         Confirmation
       </Typography>
@@ -44,6 +45,7 @@ const Step3 = ({ prevStep, handleSubmit, values }) => {
       <Button variant="contained" color="primary" onClick={handleSubmit}>
         Submit
       </Button>
+      </Box>
     </Container>
   );
 };

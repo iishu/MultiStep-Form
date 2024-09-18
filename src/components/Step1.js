@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Button, Container, Typography } from '@mui/material';
+import { TextField, Button, Container, Typography, Box } from '@mui/material';
 
 const Step1 = ({ nextStep, handleChange, values }) => {
   const continueStep = (e) => {
@@ -8,10 +8,12 @@ const Step1 = ({ nextStep, handleChange, values }) => {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" style={{marginTop:'2rem'}}>
+        <Box boxShadow={3} p={3} bgcolor="background.paper">
       <Typography variant="h4" gutterBottom>
         Personal Information
       </Typography>
+      <form> 
       <TextField
         label="Name"
         onChange={handleChange('name')}
@@ -38,9 +40,11 @@ const Step1 = ({ nextStep, handleChange, values }) => {
         margin="normal"
         required
       />
-      <Button variant="contained" color="primary" onClick={continueStep}>
+      <Button variant="contained" color="primary" onClick={continueStep} style={{marginTop:'1rem'}}>
         Next
       </Button>
+      </form>
+      </Box>
     </Container>
   );
 };

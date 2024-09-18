@@ -1,6 +1,14 @@
 import React from 'react';
-import { TextField, Button, Container, Typography } from '@mui/material';
-
+import { TextField, Button, Container, Typography, Box } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+const useStyles = makeStyles((theme) => ({
+    button: {
+      marginTop: theme.spacing(2),
+    },
+    container: {
+      marginTop: theme.spacing(4),
+    },
+  }));
 const Step2 = ({ nextStep, prevStep, handleChange, values }) => {
   const continueStep = (e) => {
     e.preventDefault();
@@ -14,6 +22,7 @@ const Step2 = ({ nextStep, prevStep, handleChange, values }) => {
 
   return (
     <Container maxWidth="sm">
+        <Box boxShadow={3} p={3} bgcolor="background.paper">
       <Typography variant="h4" gutterBottom>
         Address Information
       </Typography>
@@ -62,6 +71,7 @@ const Step2 = ({ nextStep, prevStep, handleChange, values }) => {
       <Button variant="contained" color="primary" onClick={continueStep}>
         Next
       </Button>
+      </Box>
     </Container>
   );
 };
